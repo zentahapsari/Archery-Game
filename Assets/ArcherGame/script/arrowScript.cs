@@ -13,9 +13,15 @@ public class arrowScript : MonoBehaviour
     public GameObject arrowPrefab;
     bool isActive = true;
     public static int counter = 0;
-    public int arrows = 20;
+    public static int counter1 = 0;
+    public static int counter2 = 0;
+    public int arrows = 15;
+	public int score = 0;
     public int actScore = 1;
     public Text scoreText;
+    public Text scoreText1;
+    public Text scoreText2;
+    public Text arrowText;
     Vector2 throwForce;
     Vector3 originalPos;
 
@@ -47,7 +53,7 @@ public class arrowScript : MonoBehaviour
         return;
 
         isActive = false;
-
+    // if (arrows > 0){
         if(col.collider.tag == "apple")
         {
             rb.velocity = new Vector2(0,0);
@@ -57,7 +63,10 @@ public class arrowScript : MonoBehaviour
             arrowCollider.offset = new Vector2 (arrowCollider.offset.x, -0.4f);
             arrowCollider.size = new Vector2 (arrowCollider.size.x,-2);
             counter++;
+
             scoreText.text = counter.ToString();
+            // scoreText1.text = counter1.ToString();
+            // scoreText2.text = counter2.ToString();
             myFX.PlayOneShot (arrowTarget);
             // create a rising text for score display
 			GameObject rt = (GameObject)Instantiate(risingText, new Vector3(0,0,0),Quaternion.identity);
@@ -65,8 +74,10 @@ public class arrowScript : MonoBehaviour
 			rt.transform.name = "rt";
 			rt.GetComponent<TextMesh>().text= "+"+actScore;
             transform.position=originalPos;
+            // arrows --;
+            // arrowText.text = arrows.ToString();
         }
-        else if(col.collider.tag == "tokohmerah")
+        else if(col.collider.tag == "tokohmerah" )
         {
             rb.velocity = new Vector2(0,0);
             rb.bodyType = RigidbodyType2D.Kinematic;
@@ -74,23 +85,27 @@ public class arrowScript : MonoBehaviour
         
             arrowCollider.offset = new Vector2 (arrowCollider.offset.x, -0.4f);
             arrowCollider.size = new Vector2 (arrowCollider.size.x,-2);
+            // counter--;
+            // scoreText.text = counter.ToString();
+            transform.position=originalPos;
             myFX.PlayOneShot (speakUp);
+
+            // create a rising text for score display
+			// GameObject rt1 = (GameObject)Instantiate(risingText, new Vector3(0,0,0),Quaternion.identity);
+			// rt1.transform.position = col.transform.position + new Vector3(-1,1,0);
+			// rt1.transform.name = "rt1";
+			// rt1.GetComponent<TextMesh>().text= "Your next move will be your last!";
+            // transform.position=originalPos;
             
 
         }
         else if (col.collider.tag == "arrow")
         {
             rb.velocity = new Vector2 (rb.velocity.x,-2);
-            // gameObject.transform.position = originalPos;
         }
+
+    // }
     }
 
-//     void OnTriggerEnter(Collider other)
-//   {
-//       if(other.gameObject.tag == "arrow")
-//       {
-//           gameObject.transform.position = originalPos;
-//       }
-    
-//   }
+
 }

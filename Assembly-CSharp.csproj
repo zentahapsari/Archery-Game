@@ -54,15 +54,24 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\appleScript.cs" />
+     <Compile Include="Assets\ArcherGame\script\arrowKananScript.cs" />
      <Compile Include="Assets\ArcherGame\script\arrowScript.cs" />
      <Compile Include="Assets\ArcherGame\script\bowScript.cs" />
+     <Compile Include="Assets\ArcherGame\script\bowScriptM.cs" />
      <Compile Include="Assets\ArcherGame\script\btnFX.cs" />
      <Compile Include="Assets\ArcherGame\script\camMovement.cs" />
      <Compile Include="Assets\ArcherGame\script\cloudMove.cs" />
+     <Compile Include="Assets\ArcherGame\script\counterScript.cs" />
      <Compile Include="Assets\ArcherGame\script\navigasiMove.cs" />
+     <Compile Include="Assets\ArcherGame\script\objAwake.cs" />
+     <Compile Include="Assets\ArcherGame\script\restartScript.cs" />
      <Compile Include="Assets\ArcherGame\script\resultGO1.cs" />
+     <Compile Include="Assets\ArcherGame\script\resultGO2.cs" />
+     <Compile Include="Assets\ArcherGame\script\resultMP.cs" />
      <Compile Include="Assets\ArcherGame\script\risingTextScript.cs" />
+     <Compile Include="Assets\ArcherGame\script\shootArrowMP.cs" />
      <Compile Include="Assets\ArcherGame\script\shootArrowScript.cs" />
+     <Compile Include="Assets\ArcherGame\script\shootArrowScript2.cs" />
      <Compile Include="Assets\ArcherGame\script\TimerScript.cs" />
      <Compile Include="Assets\ArcherGame\script\TimerScriptM.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />

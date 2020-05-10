@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/halamanGame1.unity
+- path: Assets/Scenes/halamanUtama.unity
   isLoaded: 1
   isActive: 1

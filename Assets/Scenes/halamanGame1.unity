@@ -1192,6 +1192,7 @@ MonoBehaviour:
   arrowSwoosh: {fileID: 8300000, guid: b86dae6341f8e0f45854278341be2ff0, type: 3}
   score: 1
   arrows: 20
+  arrowText: {fileID: 0}
 --- !u!114 &307981381
 MonoBehaviour:
   m_ObjectHideFlags: 0

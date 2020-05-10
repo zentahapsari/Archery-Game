@@ -2,9 +2,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
  
  public class shootArrowScript : MonoBehaviour {
     public float LaunchForce;
+    // GameObject arrow;
     public GameObject Arrow;
     public GameObject risingText;
     public GameObject target;
@@ -12,7 +15,8 @@ using UnityEngine.UI;
     public AudioSource myFX;
 	public AudioClip arrowSwoosh;
     public int score = 0;
-    public int arrows = 20;
+    public int arrows = 15;
+    public Text arrowText;
 
     	// has sound already be played
 	bool arrowSwooshSoundPlayed;
@@ -34,18 +38,10 @@ using UnityEngine.UI;
         GameObject ArrowIns = Instantiate(Arrow,transform.position,transform.rotation);
         ArrowIns.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         myFX.PlayOneShot (arrowSwoosh);
+        arrows --;
+        arrowText.text = arrows.ToString();
+            if(arrows==-1){
+            SceneManager.LoadScene("halamanGameMike");
+        }
     }
-
-	public void setPoints(int points){
-		score += points;
-		if (points == 1) {
-			GameObject rt1 = (GameObject)Instantiate(risingText, new Vector3(0,0,0),Quaternion.identity);
-			rt1.transform.position = this.transform.position + new Vector3(0,0,0);
-			rt1.transform.name = "rt1";
-			// each target's "ring" is 0.07f wide
-			// so it's relatively simple to calculate the ring hit (thus the score)
-			rt1.GetComponent<TextMesh>().text= "Bonus arrow";
-		}
-	}
-//source code : https://www.youtube.com/watch?v=buZ6h-OlUOU
  }

@@ -34,7 +34,7 @@ public class TimerScriptM : MonoBehaviour
         // timerText.text = gameOver.ToString();    
         // }
         }
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(1);
         SceneManager.LoadScene("HalamanGO2");
     }
 

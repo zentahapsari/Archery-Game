@@ -11,9 +11,9 @@ IEnumerator rotateForever() //agar panah bergerak secara looping sesuai derajat
 {
     while (true)
     {
-        StartCoroutine(RotateMe1(Vector3.forward * 30f, 1f));
+        StartCoroutine(RotateMe1(Vector3.forward * 45f, 1f));
         yield return new WaitForSeconds(1);
-        StartCoroutine(RotateMe2(Vector3.forward * -30f, 1f));
+        StartCoroutine(RotateMe2(Vector3.forward * -45f, 1f));
         yield return new WaitForSeconds(1);
     }
 }
